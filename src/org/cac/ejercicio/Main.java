@@ -10,11 +10,7 @@ public class Main {
         List<Animal> animales = Arrays.asList(new Gato(), new Perro(), new Vaca());
 
         animales.forEach(animal -> {
-            if (animal instanceof ICarnivoro) {
-                ((ICarnivoro) animal).comerCarne();
-            } else {
-                ((IHervivoro) animal).comerHierba();
-            }
+            ((Alimentable) animal).comer();
             System.out.println(animal.emitirSonido());
             System.out.println();
         });
@@ -26,20 +22,20 @@ public class Main {
 
 //        Alimentando al los carnívoros con animales y
 //        a los herbívoros con hierbas;
-        perro.comerAnimal(gato);
-        gato.comerAnimal(perro);
-        vaca.comerHierba(hierba);
+        perro.comer(gato);
+        gato.comer(perro);
+        vaca.comer(hierba);
 
 //        Tratando de alimentar al perro con un Girasol;
         try {
-            perro.comerAnimal(hierba);
+            perro.comer(hierba);
         } catch (TipoAlimentoException tae) {
             System.out.println(tae.getMessage());
         }
 
 //        Tratando de alimentar a la vaca con un Animal;
         try {
-            vaca.comerHierba(perro);
+            vaca.comer(perro);
         } catch (TipoAlimentoException tae) {
             System.out.println(tae.getMessage());
         }

@@ -2,7 +2,7 @@ package org.cac.ejercicio;
 
 import org.cac.ejercicio.excepciones.TipoAlimentoException;
 
-public class Gato extends Animal implements ICarnivoro {
+public class Gato extends Animal implements Alimentable {
 
     @Override
     String emitirSonido() {
@@ -10,7 +10,7 @@ public class Gato extends Animal implements ICarnivoro {
     }
 
     @Override
-    public void comerAnimal(Object o) {
+    public void comer(Object o) {
         try {
             System.out.println("El gato se comió al " +
                                ((Animal) o).getClass().getSimpleName());
@@ -20,7 +20,7 @@ public class Gato extends Animal implements ICarnivoro {
     }
 
     @Override
-    public void comerCarne() {
+    public void comer() {
         System.out.println("El gato está comiendo atún.");
     }
 }
