@@ -1,5 +1,7 @@
 package org.cac.ejercicio;
 
+import org.cac.ejercicio.excepciones.TipoAlimentoException;
+
 public class Perro extends Animal implements ICarnivoro {
     @Override
     String emitirSonido() {
@@ -7,13 +9,16 @@ public class Perro extends Animal implements ICarnivoro {
     }
 
     @Override
-    public void comerAnimal(Animal a) {
-        System.out.println("El "+ this.getClass().getSimpleName() +" se comió al " + a.getClass().getSimpleName());
+    public void comerAnimal(Object o) {
+        try {
+            System.out.println("El perro se comió al " + ((Animal) o).getClass().getSimpleName());
+        } catch (ClassCastException cce) {
+            throw new TipoAlimentoException();
+        }
     }
-
 
     @Override
     public void comerCarne() {
-        System.out.println("El " + this.getClass().getSimpleName() + " está comiendo asado.");
+        System.out.println("El perro está comiendo asado.");
     }
 }

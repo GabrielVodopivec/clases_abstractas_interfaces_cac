@@ -13,6 +13,6 @@ public class Vaca extends Animal implements IHervivoro {
 
     @Override
     public void comerHierba() {
-        System.out.println("La " + this.getClass().getSimpleName() + " está comiendo pasto");
+        System.out.println("La vaca está comiendo pasto");
     }
 }
