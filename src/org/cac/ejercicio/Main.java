@@ -36,5 +36,12 @@ public class Main {
         } catch (TipoAlimentoException tae) {
             System.out.println(tae.getMessage());
         }
+
+//        Tratando de alimentar a la vaca con un Animal;
+        try {
+            vaca.comerHierba(perro);
+        } catch (TipoAlimentoException tae) {
+            System.out.println(tae.getMessage());
+        }
     }
 }
