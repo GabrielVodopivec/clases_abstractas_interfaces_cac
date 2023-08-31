@@ -11,7 +11,7 @@ public class Vaca extends Animal implements Alimentable {
     @Override
     public void comer(Object o) {
         try {
-        System.out.println("La vaca se comió el " + ((Hierba) o).getName());
+            System.out.println("La vaca se comió el " + ((Hierba) o).getName());
         } catch (ClassCastException cce) {
             throw new TipoAlimentoException("Un animal herbívoro solo puede comer hierbas.");
         }

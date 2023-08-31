@@ -12,8 +12,9 @@ public class Gato extends Animal implements Alimentable {
     @Override
     public void comer(Object o) {
         try {
-            System.out.println("El gato se comió al " +
-                               ((Animal) o).getClass().getSimpleName());
+            System.out.println(
+                    "El gato se comió al " + ((Animal) o).getClass().getSimpleName()
+            );
         } catch (ClassCastException cce) {
             throw new TipoAlimentoException();
         }

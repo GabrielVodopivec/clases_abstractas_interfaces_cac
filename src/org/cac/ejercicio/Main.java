@@ -20,8 +20,7 @@ public class Main {
         Vaca vaca = new Vaca();
         Hierba hierba = new Hierba("Girasol");
 
-//        Alimentando al los carnívoros con animales y
-//        a los herbívoros con hierbas;
+//        Alimentando al los carnívoros con animales y a los herbívoros con hierbas;
         perro.comer(gato);
         gato.comer(perro);
         vaca.comer(hierba);
